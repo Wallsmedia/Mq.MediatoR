@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    
+    <PackageId>Mq.MediatoR.Abstractions</PackageId>
+
+    <AssemblyVersion>$(CoreVersion)</AssemblyVersion>
+    <FileVersion>$(CoreVersion)</FileVersion>
+    <Version>$(CorePackageVersion)</Version>
+
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\build\Mq.MediatoR.snk</AssemblyOriginatorKeyFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <LangVersion>7.3</LangVersion>
+    
+    <Product>$(ProductPrefix).Abstractions</Product>
+
+    <Description>
+      The Message Queue Mediator Abstraction interfaces.
+    </Description>
+    
+    <PackageTags>MQ Mediator Abstraction</PackageTags>
+    
+    <PackageReleaseNotes>
+      The Message Queue Mediator Abstractions.
+      They are used to implement the internal application message exchange system.
+    </PackageReleaseNotes>
+    
+    <RootNamespace>Mq.Mediator</RootNamespace>
+    
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>../../.nupkgs</PackageOutputPath>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+</Project>

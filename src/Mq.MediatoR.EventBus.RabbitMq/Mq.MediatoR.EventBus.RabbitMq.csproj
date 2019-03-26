@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
+
+    <AssemblyVersion>$(CoreVersion)</AssemblyVersion>
+    <FileVersion>$(CoreVersion)</FileVersion>
+    <Version>$(CorePackageVersion)</Version>
+
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\build\Mq.MediatoR.snk</AssemblyOriginatorKeyFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <LangVersion>7.3</LangVersion>
+
+    <Product>$(ProductPrefix).Abstractions</Product>
+
+    <Description>
+      The Event Bus Mediator Rabbit MQ.
+    </Description>
+
+    <PackageTags>MQ Event Bus Mediator Rabbit MQ</PackageTags>
+
+    <PackageReleaseNotes>
+      The Event Bus Mediator Rabbit MQ.
+      The implementation for Rabbit MQ.
+    </PackageReleaseNotes>
+
+    <RootNamespace>Mq.Mediator.EventBus</RootNamespace>
+
+    <PackageId>Mq.MediatoR.EventBus.RabbitMq</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>../../.nupkgs</PackageOutputPath>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mq.Mediator.Abstractions\Mq.Mediator.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(TargetFramework) == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(TargetFramework) == 'netcoreapp3.0'">
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.0.0-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="RabbitMQ.Client" Version="5.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Polly" Version="7.1.0" />
+
+  </ItemGroup>
+
+</Project>

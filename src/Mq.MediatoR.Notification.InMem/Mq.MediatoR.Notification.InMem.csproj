@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
+
+    <AssemblyVersion>$(CoreVersion)</AssemblyVersion>
+    <FileVersion>$(CoreVersion)</FileVersion>
+    <Version>$(CorePackageVersion)</Version>
+
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\build\Mq.MediatoR.snk</AssemblyOriginatorKeyFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <LangVersion>7.3</LangVersion>
+
+    <Product>$(ProductPrefix).DepenedencyInjection</Product>
+
+    <Description>The Message Queue Mediator for Mq Notification In Memory
+</Description>
+
+    <PackageTags>MQ Mediator Notification</PackageTags>
+
+    <PackageReleaseNotes>
+The Message Queue Mediator The Message Queue Mediator for Mq Notification In Memory based on the Microsoft.Extensions.DependencyInjection container.
+</PackageReleaseNotes>
+
+    <PackageId>Mq.MediatoR.Notification.InMem</PackageId>
+
+    <RootNamespace>Mq.Mediator.Notification.InMem</RootNamespace>
+
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>../../.nupkgs</PackageOutputPath>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup Condition="$(TargetFramework) == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(TargetFramework) == 'netcoreapp3.0'">
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Mq.Mediator.Abstractions\Mq.Mediator.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
