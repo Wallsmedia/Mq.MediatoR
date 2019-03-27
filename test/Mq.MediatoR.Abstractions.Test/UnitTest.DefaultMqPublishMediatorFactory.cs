@@ -7,14 +7,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Mq.MediatoR.Notification.InMem;
-using Mq.MediatoR.Request.InMem;
+using Mq.Mediator.Notification.InMem;
+using Mq.Mediator.Request.InMem;
 using Xunit;
 
 namespace Mq.Mediator.Abstractions.Test
 {
 
- 
+
 
     public class UnitTestOfDefaultMqPublishMediatorFactory
     {

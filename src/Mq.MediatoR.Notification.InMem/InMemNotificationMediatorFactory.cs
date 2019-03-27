@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Mq.Mediator.Abstractions;
 
-namespace Mq.MediatoR.Notification.InMem
+namespace Mq.Mediator.Notification.InMem
 {
     /// <summary>
     /// Default implementation of the <see cref="INotificationMediatorFactory{TNotification}"/>.

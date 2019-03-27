@@ -7,8 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Mq.Mediator.Abstractions;
 using System.Threading;
 using System.Threading.Tasks;
+using Mq.Mediator.Notification.InMem;
 
-namespace Mq.MediatoR.Notification.InMem
+namespace Mq.Mediator.Notification.InMem
 {
     /// <summary>
     /// Extension methods for adding Mq.Mediator services to the DI container.

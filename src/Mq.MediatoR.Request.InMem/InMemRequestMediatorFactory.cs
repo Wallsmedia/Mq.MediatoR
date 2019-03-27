@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Mq.MediatoR.Request.InMem
+namespace Mq.Mediator.Request.InMem
 {
     /// <summary>
     /// The default implementation of the <see cref="IRequestMediatorFactory{TRequest, TResponse}"/>.

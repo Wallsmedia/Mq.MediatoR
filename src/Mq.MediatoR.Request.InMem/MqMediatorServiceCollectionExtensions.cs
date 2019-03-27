@@ -5,15 +5,16 @@ using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Mq.Mediator.Abstractions;
+using Mq.Mediator.Request.InMem;
 
-namespace Mq.MediatoR.Request.InMem
+namespace Mq.Mediator.Request.InMem
 {
     /// <summary>
     /// Extension methods for adding Mq.Mediator services to the DI container.
     /// </summary>
     public static class MqMediatoRRequestInMemExtensions
     {
-       
+
 
         /// <summary>
         /// Adds services required for using of Request Mq.Mediator.
