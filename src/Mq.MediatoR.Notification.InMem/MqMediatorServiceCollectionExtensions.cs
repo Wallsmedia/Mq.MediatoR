@@ -21,7 +21,7 @@ namespace Mq.Mediator.Notification.InMem
         /// </summary>
         /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-        public static IServiceCollection AddNotificationMediator(this IServiceCollection services)
+        public static IServiceCollection AddMqNotificationMediator(this IServiceCollection services)
         {
             if (services == null)
             {

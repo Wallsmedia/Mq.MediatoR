@@ -25,7 +25,7 @@ namespace Mq.Mediator.Abstractions.Test
             sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_Initialization,ServicingOrder.Initialization);
             sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_PostProcessing,ServicingOrder.PostProcessing);
             sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_PreProcessing,ServicingOrder.PreProcessing);
-            sc.AddNotificationMediator();
+            sc.AddMqNotificationMediator();
             sc.AddMqRequestMediator();
             return sc.BuildServiceProvider();
         }
@@ -38,7 +38,7 @@ namespace Mq.Mediator.Abstractions.Test
             sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Initialization, ServicingOrder.Initialization);
             sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_PostProcessing, ServicingOrder.PostProcessing);
             sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_PreProcessing, ServicingOrder.PreProcessing);
-            sc.AddNotificationMediator();
+            sc.AddMqNotificationMediator();
             sc.AddMqRequestMediator();
             return sc.BuildServiceProvider();
         }
@@ -48,7 +48,7 @@ namespace Mq.Mediator.Abstractions.Test
             ServiceCollection sc = new ServiceCollection();
             sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Complete10, ServicingOrder.Complete);
             sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Processing, ServicingOrder.Processing);
-            sc.AddNotificationMediator();
+            sc.AddMqNotificationMediator();
             sc.AddMqRequestMediator();
             return sc.BuildServiceProvider();
         }
