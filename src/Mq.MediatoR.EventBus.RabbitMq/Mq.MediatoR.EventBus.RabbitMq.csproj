@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
 
     <AssemblyVersion>$(CoreVersion)</AssemblyVersion>
     <FileVersion>$(CoreVersion)</FileVersion>
@@ -15,19 +15,23 @@
     <Product>$(ProductPrefix).Abstractions</Product>
 
     <Description>
-      The Event Bus Mediator Rabbit MQ.
+      The Event Bus MQ Mediator for Rabbit MQ.
     </Description>
 
     <PackageTags>MQ Event Bus Mediator Rabbit MQ</PackageTags>
 
     <PackageReleaseNotes>
-      The Event Bus Mediator Rabbit MQ.
+      The Event Bus MQ Mediator for Rabbit MQ.
       The implementation for Rabbit MQ.
     </PackageReleaseNotes>
 
     <RootNamespace>Mq.Mediator.EventBus</RootNamespace>
 
     <PackageId>Mq.MediatoR.EventBus.RabbitMq</PackageId>
+
+    <PackageLicenseUrl />
+
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -40,20 +44,27 @@
     <ProjectReference Include="..\Mq.Mediator.Abstractions\Mq.Mediator.Abstractions.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework) == 'netstandard2.0'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
   </ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework) == 'netcoreapp3.0'">
-    <PackageReference Include="Microsoft.Extensions.Options" Version="3.0.0-*" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="5.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Polly" Version="7.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    
-    <PackageReference Include="RabbitMQ.Client" Version="5.1.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-    <PackageReference Include="Polly" Version="7.1.0" />
-
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

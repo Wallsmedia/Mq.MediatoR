@@ -1,4 +1,4 @@
-﻿// Copyright © Alexander Paskhin 2019. All rights reserved.
+// Copyright © Alexander Paskhin 2019. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Mq.Mediator.Abstractions;
 using Mq.Mediator.Request.InMem;
 
-namespace Mq.Mediator.Request.InMem
+namespace Mq.Mediator.Request.DependencyInjection
 {
     /// <summary>
     /// Extension methods for adding Mq.Mediator services to the DI container.
