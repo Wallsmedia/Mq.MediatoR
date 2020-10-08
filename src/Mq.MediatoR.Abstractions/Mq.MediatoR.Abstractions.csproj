@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>$(DotNetCoreAppVersion)</TargetFrameworks>
+    <TargetFrameworks>$(DotNetCoreVersion)</TargetFrameworks>
     
     <PackageId>Mq.MediatoR.Abstractions</PackageId>
 
@@ -47,7 +47,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="Mq.MediatoR.Request.InMem.csproj" />
   </ItemGroup>
   
 </Project>

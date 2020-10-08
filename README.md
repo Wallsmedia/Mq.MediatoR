@@ -4,9 +4,8 @@ The simple abstract, Dependency Inversion solution for communicating between
 Application hosted MicroServices.
 
 ## Version 3.1.0
- - NetStandard 2.0 [NetCoreApp  2.2]
-  
- - NetStandard 2.1 [NetCoreApp  3.0]
+ - NetStandard 2.1
+ - NetCoreApp  3.1
 
 ## Nuget packages:
 
