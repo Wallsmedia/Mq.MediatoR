@@ -1,25 +1,15 @@
-﻿// Copyright © Alexander Paskhin 2019. All rights reserved.
+// Copyright © Alexander Paskhin 2019. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 
+using Mq.Mediator.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Mq.Mediator.Abstractions.Test
+namespace Mq.MediatoR.InMem.Test.RequestHandlers.Mock
 {
-    public class TestSendRequest
-    {
-        public string Text { get; set; } = nameof(TestSendRequest);
-        public List<string> Visitor { get; } = new List<string>();
-    }
-
-    public class TestSendResponse
-    {
-        public string Text { get; set; } = nameof(TestSendResponse);
-        public string Response { get; set; }
-    }
 
     public static class TestSendDelegates
     {

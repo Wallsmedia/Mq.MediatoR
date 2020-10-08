@@ -1,6 +1,7 @@
-﻿// Copyright © Alexander Paskhin 2019. All rights reserved.
+// Copyright © Alexander Paskhin 2019. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
+using System;
 using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 
@@ -27,8 +28,8 @@ namespace Mq.Mediator.EventBus.RabbitMQ
             if (cnfg.Password != null) _connectionFactory.Password = cnfg.Password;
             if (cnfg.Uri != null) _connectionFactory.Uri = cnfg.Uri;
             if (cnfg.Port.HasValue) _connectionFactory.Port = cnfg.Port.Value;
-            if (cnfg.SocketReadTimeout.HasValue) _connectionFactory.SocketReadTimeout = cnfg.SocketReadTimeout.Value;
-            if (cnfg.SocketWriteTimeout.HasValue) _connectionFactory.SocketWriteTimeout = cnfg.SocketWriteTimeout.Value;
+            if (cnfg.SocketReadTimeout.HasValue) _connectionFactory.SocketReadTimeout = TimeSpan.FromMilliseconds(cnfg.SocketReadTimeout.Value);
+            if (cnfg.SocketWriteTimeout.HasValue) _connectionFactory.SocketWriteTimeout = TimeSpan.FromMilliseconds(cnfg.SocketWriteTimeout.Value);
         }
 
         /// <summary>

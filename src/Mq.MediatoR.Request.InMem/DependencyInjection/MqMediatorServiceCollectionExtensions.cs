@@ -15,7 +15,6 @@ namespace Mq.Mediator.Request.DependencyInjection
     public static class MqMediatoRRequestInMemExtensions
     {
 
-
         /// <summary>
         /// Adds services required for using of Request Mq.Mediator.
         /// </summary>
@@ -43,7 +42,7 @@ namespace Mq.Mediator.Request.DependencyInjection
         /// <param name="requestDelegate">The instance of the publish processing delegate.</param>
         /// <param name="servicingOrder">The order of the processing.</param>
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-        public static IServiceCollection AddSendProcessingHandler<TRequest, TResponse>(this IServiceCollection services, RequestResponseDelegateAsync<TRequest, TResponse> requestDelegate, ServicingOrder servicingOrder = ServicingOrder.Processing) where TRequest : class where TResponse : class
+        public static IServiceCollection AddRequestProcessingHandler<TRequest, TResponse>(this IServiceCollection services, RequestResponseDelegateAsync<TRequest, TResponse> requestDelegate, ServicingOrder servicingOrder = ServicingOrder.Processing) where TRequest : class where TResponse : class
         {
             if (requestDelegate == null)
             {

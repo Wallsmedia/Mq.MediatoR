@@ -14,5 +14,10 @@
     <ApplicationIcon />
     <OutputType>Library</OutputType>
   </PropertyGroup>
-  
+
+
+  <PropertyGroup>
+    <DotNetCoreAppVersion>netcoreapp3.1</DotNetCoreAppVersion>
+    <DotNetCoreVersion>netstandard2.1</DotNetCoreVersion>
+  </PropertyGroup>
 </Project>

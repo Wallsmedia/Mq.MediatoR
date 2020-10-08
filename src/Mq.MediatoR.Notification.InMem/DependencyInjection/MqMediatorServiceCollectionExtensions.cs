@@ -5,8 +5,6 @@ using System;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Mq.Mediator.Abstractions;
-using System.Threading;
-using System.Threading.Tasks;
 using Mq.Mediator.Notification.InMem;
 
 namespace Mq.Mediator.Notification.DependencyInjection
@@ -41,7 +39,7 @@ namespace Mq.Mediator.Notification.DependencyInjection
         /// <param name="notificationDelegate">The instance of the publish processing delegate.</param>
         /// <param name="servicingOrder">The order of the processing.</param>
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-        public static IServiceCollection AddPublishProcessingHandler<TNotification>(this IServiceCollection services, NotificationDelegateAsync<TNotification> notificationDelegate, ServicingOrder servicingOrder = ServicingOrder.Processing) where TNotification : class
+        public static IServiceCollection AddNotificationProcessingHandler<TNotification>(this IServiceCollection services, NotificationDelegateAsync<TNotification> notificationDelegate, ServicingOrder servicingOrder = ServicingOrder.Processing) where TNotification : class
         {
             if (notificationDelegate == null)
             {

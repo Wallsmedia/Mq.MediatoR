@@ -11,22 +11,23 @@ using Mq.Mediator.Notification.DependencyInjection;
 using Mq.Mediator.Notification.InMem;
 using Mq.Mediator.Request.DependencyInjection;
 using Mq.Mediator.Request.InMem;
+using Mq.MediatoR.InMem.Test.RequestHandlers.Mock;
 using Xunit;
 
 
 namespace Mq.Mediator.Abstractions.Test
 {
-    public class UnitTestOfDefaultMqSendMediatorFactory
+    public class UnitTestOfInMemoryRequests
     {
 
         ServiceProvider BuildTestServiceProviderNormal()
         {
             ServiceCollection sc = new ServiceCollection();
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_Complete,ServicingOrder.Complete);
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_Processing,ServicingOrder.Processing);
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_Initialization,ServicingOrder.Initialization);
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_PostProcessing,ServicingOrder.PostProcessing);
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_PreProcessing,ServicingOrder.PreProcessing);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_Complete,ServicingOrder.Complete);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_Processing,ServicingOrder.Processing);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_Initialization,ServicingOrder.Initialization);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_PostProcessing,ServicingOrder.PostProcessing);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse > (TestSendDelegates.Process_PreProcessing,ServicingOrder.PreProcessing);
             sc.AddMqNotificationMediator();
             sc.AddMqRequestMediator();
             return sc.BuildServiceProvider();
@@ -35,11 +36,11 @@ namespace Mq.Mediator.Abstractions.Test
         ServiceProvider BuildTestServiceProviderException()
         {
             ServiceCollection sc = new ServiceCollection();
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Complete, ServicingOrder.Complete);
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Processing_Exception, ServicingOrder.Processing);
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Initialization, ServicingOrder.Initialization);
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_PostProcessing, ServicingOrder.PostProcessing);
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_PreProcessing, ServicingOrder.PreProcessing);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Complete, ServicingOrder.Complete);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Processing_Exception, ServicingOrder.Processing);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Initialization, ServicingOrder.Initialization);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_PostProcessing, ServicingOrder.PostProcessing);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_PreProcessing, ServicingOrder.PreProcessing);
             sc.AddMqNotificationMediator();
             sc.AddMqRequestMediator();
             return sc.BuildServiceProvider();
@@ -48,8 +49,8 @@ namespace Mq.Mediator.Abstractions.Test
         ServiceProvider BuildTestServiceProviderCancel()
         {
             ServiceCollection sc = new ServiceCollection();
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Complete10, ServicingOrder.Complete);
-            sc.AddSendProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Processing, ServicingOrder.Processing);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Complete10, ServicingOrder.Complete);
+            sc.AddRequestProcessingHandler<TestSendRequest, TestSendResponse>(TestSendDelegates.Process_Processing, ServicingOrder.Processing);
             sc.AddMqNotificationMediator();
             sc.AddMqRequestMediator();
             return sc.BuildServiceProvider();

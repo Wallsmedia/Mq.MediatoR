@@ -1,4 +1,4 @@
-﻿// Copyright © Alexander Paskhin 2019. All rights reserved.
+// Copyright © Alexander Paskhin 2019. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
@@ -311,7 +311,7 @@ namespace Mq.Mediator.EventBus.RabbitMQ
             private void ProcessSubscriptionEvent(object sender, BasicDeliverEventArgs e)
             {
                 var eventName = e.RoutingKey;
-                var message = Encoding.UTF8.GetString(e.Body);
+                var message = Encoding.UTF8.GetString(e.Body.ToArray());
                 TNotification notification = JsonConvert.DeserializeObject<TNotification>(message);
 
                 _notificationDelegate?.Invoke(notification);

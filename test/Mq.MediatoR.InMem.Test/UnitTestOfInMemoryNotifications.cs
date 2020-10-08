@@ -2,15 +2,12 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Mq.Mediator.Notification.DependencyInjection;
-using Mq.Mediator.Notification.InMem;
 using Mq.Mediator.Request.DependencyInjection;
-using Mq.Mediator.Request.InMem;
+using Mq.MediatoR.Abstractions.Test.NotificationHandlers.Mock;
 using Xunit;
 
 namespace Mq.Mediator.Abstractions.Test
@@ -18,7 +15,7 @@ namespace Mq.Mediator.Abstractions.Test
 
 
 
-    public class UnitTestOfDefaultMqPublishMediatorFactory
+    public class UnitTestOfInMemoryNotifications
     {
 
         ServiceProvider BuildTestServiceProviderNormal()
