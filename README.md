@@ -3,7 +3,7 @@
 The simple abstract, Dependency Inversion solution for communicating between 
 Application hosted MicroServices.
 
-## Version 3.0.0
+## Version 3.1.0
  - NetStandard 2.0 [NetCoreApp  2.2]
   
  - NetStandard 2.1 [NetCoreApp  3.0]
@@ -37,15 +37,15 @@ dependency injection container, but they can be adopted to other types DI contai
 ## Message Queue Notifications
 
 Based on using package: Mq.MediatoR.Notification.InMem
-### How to use works
+### How to use
 
 ## Message Queue Requests
 Based on using package: Mq.MediatoR.Request.InMem
-### How to use works
+### How to use
 
 ## Message Queue Event Bus
 Based on using package: Mq.MediatoR.EventBus.RabbitMq
-### How to use works
+### How to use
 
 
 
